@@ -16,7 +16,7 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |s|
     s.name          = "rack-linkify"
-    s.version       = "0.0.3"
+    s.version       = "0.0.4"
     s.author        = "Wyatt Greene"
     s.email         = "techiferous@gmail.com"
     s.summary       = "Rack middleware that adds anchor tags to URLs in text."
