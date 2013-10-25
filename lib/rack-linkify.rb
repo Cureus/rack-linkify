@@ -61,12 +61,6 @@ module Rack
           # Nokogiri's document structure to add a new node in the middle of the text.
          'beginninganchor1\0beginninganchor2\0\3endinganchor')
    
-        # text that looks like @foo can become a twitter link
-        if options[:twitter]
-          new_text.gsub!(/(^|\s|\()(@(\w+))(\.|\?|!|:|,|\))*\b/,
-           '\1beginninganchor1http://twitter.com/\3beginninganchor2\2endinganchor')
-        end
-   
         new_text
       end
     end
@@ -79,7 +73,7 @@ module Rack
     end
     
     def change_html_string(html)
-      Rack::Linkify.linkify(html)
+      Rack::Linkify.linkify(html, options)
     end
   end
 end
